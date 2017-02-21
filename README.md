@@ -1,6 +1,8 @@
 # contoso-webapi-core-angularjs
 Some of the technologies featured: .NET Core MVC, MediatR, AutoMapper, Fixie, Respawn, EF Core, Angular UI Router, Karma, Jasmine.
 
+The architecture of the project is inspired by [Miguel Castro's lecture](https://vimeo.com/113704451) on SPA Silos and the benefits of using them.
+
 # To run the project
 
 Assuming that you have restored the .NET packages.
