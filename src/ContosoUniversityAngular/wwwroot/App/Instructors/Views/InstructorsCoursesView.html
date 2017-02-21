@@ -1,0 +1,28 @@
+<div>
+    <h3>Courses selected instructor teaches</h3>
+    <table class="table table-bordered">
+        <tbody>
+        <tr>
+            <th>Id</th>
+            <th>Title</th>
+            <th>Actions</th>
+        </tr>
+
+        <tr ng-class="{'alert alert-success': course.id==model.selectedCourseId}" ng-repeat="course in model.courses | orderBy: 'id'">
+
+            <td>{{ course.id }}</td>
+            <td>{{ course.title }}</td>
+
+            <td class="text-center">
+                <button class="btn btn-success" ng-click="model.selectCourse(course.id)">Select</button>
+            </td>
+        </tr>
+
+        <tr ng-if="model.courses.length == 0">
+            <td colspan="4">This instructor teaches no courses.</td>
+        </tr>
+        </tbody>
+    </table>
+
+    <div ui-view="coursesStudents"></div>
+</div>

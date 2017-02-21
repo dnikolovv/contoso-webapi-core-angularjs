@@ -1,0 +1,46 @@
+<div ui-view="">
+    <div>
+        <table class="table table-bordered">
+            <tbody>
+            <tr>
+                <th>Id</th>
+                <th>Name</th>
+                <th>Date hired</th>
+                <th>Courses</th>
+                <th>Actions</th>
+            </tr>
+
+            <tr ng-class="{'alert alert-success': instructor.id==model.selectedInstructorId}" ng-repeat="instructor in model.instructors | orderBy: 'id'">
+
+                <td>{{ instructor.id }}</td>
+                <td>{{ instructor.firstName }} {{ instructor.lastName }}</td>
+                <td>{{ instructor.hireDate | date: 'yyyy-MM-dd' }}</td>
+
+                <td>
+                    <div ng-if="instructor.courses.length === 0">
+                        No courses taught.
+                    </div>
+
+                    <div ng-repeat="course in instructor.courses">
+                        {{ course.id }} {{ course.title }} </br>
+                    </div>
+                </td>
+
+                <td class="text-center">
+                    <button class="btn btn-success" ng-click="model.selectInstructor(instructor.id)">Select</button>
+                    <button class="btn btn-primary" ng-click="model.getInstructorDetails(instructor.id)">Details</button>
+                    <button class="btn btn-danger" ng-click="model.deleteInstructor(instructor.id)">Delete</button>
+                </td>
+            </tr>
+
+            <tr ng-if="model.instructors.length == 0">
+                <td colspan="5">There are no instructors to display.</td>
+            </tr>
+            </tbody>
+        </table>
+
+        <button class="btn btn-primary" ng-click="model.showAddInstructorBox()">Add instructor</button>
+        <div ui-view="add"> </div>
+        <div ui-view="instructorsCourses"></div>
+    </div>
+</div>

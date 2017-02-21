@@ -1,0 +1,1 @@
+var studentsApp = angular.module('students', ['common']);

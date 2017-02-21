@@ -1,0 +1,33 @@
+<div ui-view="">
+    <div>
+        <table class="table table-bordered">
+            <tbody>
+            <tr>
+                <th>Id</th>
+                <th>Name</th>
+                <th>Enrollment date</th>
+                <th>Actions</th>
+            </tr>
+
+            <tr ng-repeat="student in model.students | orderBy: 'id'">
+
+                <td>{{ student.id }}</td>
+                <td>{{ student.fullName }}</td>
+                <td>{{ student.enrollmentDate | date: 'yyyy-MM-dd' }}</td>
+
+                <td class="text-center">
+                    <button class="btn btn-primary" ng-click="model.getStudentDetails(student.id)">Details</button>
+                    <button class="btn btn-danger" ng-click="model.deleteStudent(student.id)">Delete</button>
+                </td>
+            </tr>
+
+            <tr ng-if="model.students.length == 0">
+                <td colspan="4">There are no students to display.</td>
+            </tr>
+            </tbody>
+        </table>
+
+        <button class="btn btn-primary" ng-click="model.showAddStudentBox()">Add student</button>
+        <div ui-view="add"> </div>
+    </div>
+</div>

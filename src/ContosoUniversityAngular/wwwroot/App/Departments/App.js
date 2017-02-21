@@ -1,0 +1,1 @@
+var departmentsApp = angular.module('departments', ['common']);

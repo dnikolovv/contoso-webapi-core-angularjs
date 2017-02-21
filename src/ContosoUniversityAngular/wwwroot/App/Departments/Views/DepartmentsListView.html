@@ -1,0 +1,37 @@
+<div ui-view="">
+    <div>
+        <table class="table table-bordered table-striped">
+            <tbody>
+            <tr>
+                <th>Id</th>
+                <th>Name</th>
+                <th>Budget</th>
+                <th>Date created</th>
+                <th>Administrator</th>
+                <th>Actions</th>
+            </tr>
+
+            <tr ng-repeat="department in model.departments | orderBy: 'id'">
+
+                <td>{{ department.id }}</td>
+                <td>{{ department.name }}</td>
+                <td>{{ department.budget }}</td>
+                <td>{{ department.startDate | date: 'yyyy-MM-dd' }}</td>
+                <td>{{ department.administratorFullName }}</td>
+                <td class="text-center">
+                    <button class="btn btn-primary" ng-click="model.getDepartmentDetails(department.id)">Details</button>
+                    <button class="btn btn-danger" ng-click="model.deleteDepartment(department.id)">Delete</button>
+                </td>
+            </tr>
+
+            <tr ng-if="model.departments.length == 0">
+                <td colspan="6">There are no departments to display.</td>
+            </tr>
+            </tbody>
+        </table>
+
+        <button class="btn btn-primary" ng-click="model.showAddDepartmentBox()">Add department</button>
+
+        <div ui-view="add"></div>
+    </div>
+</div>

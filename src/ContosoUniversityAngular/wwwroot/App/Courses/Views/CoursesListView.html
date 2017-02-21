@@ -1,0 +1,47 @@
+﻿<div ui-view="">
+
+<div>
+    <table class="table table-bordered table-striped">
+        <tbody>
+            <tr>
+                <td>
+                    <label>Search: </label>
+                </td>
+                <td>
+                    <input type="text" class="form-control" ng-model="model.searchFilter">
+                </td>
+            </tr>
+
+            <div>
+                <tr>
+                    <th>Id</th>
+                    <th>Title</th>
+                    <th>Credits</th>
+                    <th>Department</th>
+                    <th>Actions</th>
+                </tr>
+                <tr ng-repeat="course in model.courses | orderBy: 'id' | filter: model.searchFilter">
+
+                    <td>{{ course.id }}</td>
+                    <td>{{ course.title }}</td>
+                    <td>{{ course.credits }}</td>
+                    <td>{{ course.departmentName }}</td>
+                    <td class="text-center">
+                        <button class="btn btn-primary" ng-click="model.getCourseDetails(course.id)">Details</button>
+                        <button class="btn btn-danger" ng-click="model.deleteCourse(course.id)">Delete</button>
+                    </td>
+                </tr>
+
+                <tr ng-if="model.courses.length == 0">
+                    <td colspan="4">There are no courses to display.</td>
+                </tr>
+            </div>
+        </tbody>
+    </table>
+
+    <button class="btn btn-primary" ng-click="model.showAddCourseBox()">Add course</button>
+
+    <div ui-view="add"></div>
+</div>
+
+</div>

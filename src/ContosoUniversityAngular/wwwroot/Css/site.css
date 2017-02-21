@@ -1,0 +1,27 @@
+﻿.main-content {
+    padding-top: 4%;
+}
+
+#validationSummary {
+    list-style-type: none;
+}
+
+[ng\:cloak], [ng-cloak], [data-ng-cloak], [x-ng-cloak], .ng-cloak, .x-ng-cloak, .ng-hide {
+    display: none !important;
+}
+
+.rb-date-picker {
+    width: 100%!important;
+    display: inline-block;
+}
+
+.rb-date-picker.placeholder::before{
+    width:100%;
+    color: #888888;
+    content:attr(placeholder);
+}
+
+.rb-date-picker.placeholder:focus::before{
+    width:0%;
+    content:"";
+}

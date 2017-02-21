@@ -1,0 +1,28 @@
+﻿@{
+    ViewBag.Title = "Courses";
+}
+
+@section Scripts {
+    <script type="text/javascript" src="~/App/Courses/App.js"></script>
+    <script type="text/javascript" src="~/App/Courses/Routes.js"></script>
+    <script type="text/javascript" src="~/App/Courses/Services/CoursesService.js"></script>
+    <script type="text/javascript" src="~/App/Courses/Controllers/ListController.js"></script>
+    <script type="text/javascript" src="~/App/Courses/Controllers/DeleteController.js"></script>
+    <script type="text/javascript" src="~/App/Courses/Controllers/AddController.js"></script>
+    <script type="text/javascript" src="~/App/Courses/Controllers/DetailsController.js"></script>
+    <script type="text/javascript" src="~/App/Courses/Controllers/EditController.js"></script>
+}
+
+@section jsCode {
+    angular.bootstrap(document.getElementById('courses'), ['courses']);
+}
+
+<div ng-non-bindable>
+    <div class="main-content" id="courses">
+        <h2>Courses</h2>
+
+        <div class="row">
+            <div ui-view></div>
+        </div>
+    </div>
+</div>

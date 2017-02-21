@@ -1,0 +1,58 @@
+<div class="pull-left col-lg-6">
+    <div class="panel panel-default">
+        <div class="panel-heading">
+            <h3 class="panel-title">Edit instructor</h3>
+        </div>
+        <div class="panel-body">
+            <div class="row">
+
+                <div catch-validation-errors></div>
+
+                <form class="col-md-9 col-lg-9" ng-submit="model.editInstructor(model.instructor)">
+                    <table class="table table-user-information">
+                        <tbody>
+                        <tr>
+                            <td>Id:</td>
+                            <td>
+                                <input type="text" class="form-control" readonly ng-value="model.instructor.id">
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>First name:</td>
+                            <td>
+                                <input type="text" ng-model="model.instructor.firstName" class="form-control">
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>Last name:</td>
+                            <td>
+                                <input type="text" ng-model="model.instructor.lastName" class="form-control">
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>Hire date:</td>
+                            <td>
+                                <input class="form-control" type="date" ng-model="model.instructor.hireDate">
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>Courses taught</td>
+                            <td>
+                                <div ng-repeat="course in model.availableCourses">
+                                    <input ng-checked="course.isSelected" ng-model="course.isSelected" type="checkbox" ng-true-value="true" ng-false-value="false" /> {{ course.id }} {{ course.title }}
+                                </div>
+                            </td>
+                        </tr>
+                        </tbody>
+                    </table>
+
+                    <button type="submit" class="btn btn-primary">Update</button>
+                    <button type="button" class="btn btn-default" ng-click="model.hideEditForm()">Cancel</button>
+                </form>
+
+            </div>
+        </div>
+        <div class="panel-footer">
+        </div>
+    </div>
+</div>

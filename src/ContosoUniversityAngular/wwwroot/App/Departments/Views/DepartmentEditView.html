@@ -1,0 +1,59 @@
+<div class="pull-left col-lg-6">
+    <div class="panel panel-default">
+        <div class="panel-heading">
+            <h3 class="panel-title">Edit department</h3>
+        </div>
+        <div class="panel-body">
+            <div class="row">
+
+                <div catch-validation-errors></div>
+
+                <form class="col-md-9 col-lg-9" ng-submit="model.editDepartment(model.department)">
+                    <table class="table table-user-information">
+                        <tbody>
+                        <tr>
+                            <td>Id:</td>
+                            <td>
+                                <input type="text" class="form-control" readonly ng-value="model.department.id">
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>Administrator:</td>
+                            <td>
+                                <select class="form-control"
+                                        ng-model="model.department.administrator"
+                                        ng-options="(instructor.firstName + ' ' + instructor.lastName)
+                                        for instructor in model.instructors
+                                        track by instructor.id"
+                                        required>
+                                </select>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>Name:</td>
+                            <td>
+                                <input type="text" class="form-control" ng-value="model.department.name" ng-model="model.department.name">
+                            </td>
+                        </tr>
+
+                        <tr>
+                        </tr>
+                        <tr>
+                            <td>Budget:</td>
+                            <td>
+                                <input type="number" class="form-control" ng-value="model.department.budget" ng-model="model.department.budget">
+                            </td>
+                        </tr>
+                        </tbody>
+                    </table>
+
+                    <button type="submit" class="btn btn-primary">Update</button>
+                    <button type="button" class="btn btn-default" ng-click="model.hideEditForm()">Cancel</button>
+                </form>
+
+            </div>
+        </div>
+        <div class="panel-footer">
+        </div>
+    </div>
+</div>

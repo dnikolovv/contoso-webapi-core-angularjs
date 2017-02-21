@@ -1,0 +1,21 @@
+<div>
+    <h3>Enrollments in selected course</h3>
+    <table class="table table-bordered table-striped">
+        <tbody>
+        <tr>
+            <th>Student</th>
+            <th>Grade</th>
+        </tr>
+
+        <tr ng-repeat="enrollment in model.enrollments | orderBy: 'studentId'">
+
+            <td>{{ enrollment.student.fullName }}</td>
+            <td>{{ enrollment.grade || 'No grade yet' }}</td>
+        </tr>
+
+        <tr ng-if="model.enrollments.length == 0">
+            <td colspan="2">There are no enrollments to display.</td>
+        </tr>
+        </tbody>
+    </table>
+</div>

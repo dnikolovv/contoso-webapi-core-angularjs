@@ -1,0 +1,29 @@
+﻿@{
+    ViewBag.Title = "Students";
+}
+
+@section Scripts {
+	<script type="text/javascript" src="~/App/Students/App.js"></script>
+    <script type="text/javascript" src="~/App/Students/Routes.js"></script>
+    <script type="text/javascript" src="~/App/Students/Services/StudentsService.js"></script>
+    <script type="text/javascript" src="~/App/Students/Controllers/ListController.js"></script>
+    <script type="text/javascript" src="~/App/Students/Controllers/DetailsController.js"></script>
+    <script type="text/javascript" src="~/App/Students/Controllers/DeleteController.js"></script>
+    <script type="text/javascript" src="~/App/Students/Controllers/EditController.js"></script>
+    <script type="text/javascript" src="~/App/Students/Controllers/AddController.js"></script>
+}
+
+@section jsCode {
+
+    angular.bootstrap(document.getElementById('students'), ['students']);
+}
+
+<div ng-non-bindable>
+    <div class="main-content" id="students">
+        <h2>Students</h2>
+
+        <div class="row">
+            <div ui-view></div>
+        </div>
+    </div>
+</div>

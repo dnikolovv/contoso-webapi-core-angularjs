@@ -1,0 +1,21 @@
+﻿@{
+    ViewBag.Title = "Integrating ASP.NET MVC and AngularJS";
+}
+
+@section jsCode {
+    angular.bootstrap(document.getElementById('index'), ['app']);
+}
+
+<div id="index" ng-controller="IndexController" ng-cloak>
+    <div class="jumbotron">
+        <h1>Hello!</h1>
+        <h2>Author: <b>{{ author }}</b></h2>
+        <p class="lead">The famous Contoso University this time using AngularJs.</p>
+    </div>
+
+    <div class="row">
+        <div class="col-md-8">
+            <p>This is my try of combining AngularJs with .NET Core WEB API after reading about Miguel Castro's SPA silos <a href="http://www.codemag.com/Article/1605081">here.</a></p>
+        </div>
+    </div>
+</div>

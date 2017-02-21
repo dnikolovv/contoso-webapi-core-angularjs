@@ -1,0 +1,29 @@
+﻿@{
+    ViewBag.Title = "Departments";
+}
+
+@section Scripts {
+    <script type="text/javascript" src="~/App/Departments/App.js"></script>
+    <script type="text/javascript" src="~/App/Departments/Routes.js"></script>
+    <script type="text/javascript" src="~/App/Departments/Services/DepartmentsService.js"></script>
+    <script type="text/javascript" src="~/App/Departments/Controllers/ListController.js"></script>
+    <script type="text/javascript" src="~/App/Departments/Controllers/AddController.js"></script>
+    <script type="text/javascript" src="~/App/Departments/Controllers/DeleteController.js"></script>
+    <script type="text/javascript" src="~/App/Departments/Controllers/DetailsController.js"></script>
+    <script type="text/javascript" src="~/App/Departments/Controllers/EditController.js"></script>
+}
+
+@section jsCode {
+
+    angular.bootstrap(document.getElementById('departments'), ['departments']);
+}
+
+<div ng-non-bindable>
+    <div class="main-content" id="departments">
+        <h2>Departments</h2>
+
+        <div class="row">
+            <div ui-view></div>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,25 @@
+<div>
+    <h3>New instructor</h3>
+
+    <div catch-validation-errors></div>
+
+    <form ng-submit="model.addInstructor(model.newInstructor)">
+        <table class="table table-bordered">
+            <tr>
+                <td>
+                    <input type="text" placeholder="First name" ng-model="model.newInstructor.firstName" class="form-control" required />
+                </td>
+                <td>
+                    <input type="text" placeholder="Last name" ng-model="model.newInstructor.lastName" class="form-control" required />
+                </td>
+                <td>
+                    <input type="date" placeholder="Date hired" ng-model="model.newInstructor.hireDate" class="form-control rb-date-picker" ng-class="{ 'placeholder': true }" required />
+                </td>
+                <td class="text-center">
+                    <button class="btn btn-primary" type="submit">Add</button>
+                    <button class="btn btn-default" type="button" ng-click="model.hideAddInstructorBox()">Cancel</button>
+                </td>
+            </tr>
+        </table>
+    </form>
+</div>

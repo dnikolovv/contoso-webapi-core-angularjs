@@ -1,0 +1,36 @@
+<div>
+    <h3>New department</h3>
+
+    <div catch-validation-errors></div>
+
+    <form ng-submit="model.addDepartment(model.newDepartment)">
+        <table class="table table-bordered">
+            <tr>
+                <td>
+                    <input type="text" placeholder="Name" ng-model="model.newDepartment.name" class="form-control" required />
+                </td>
+                <td>
+                    <input type="number" min="0.01" step="0.01" placeholder="Budget" ng-model="model.newDepartment.budget" class="form-control" required />
+                </td>
+                <td>
+                    <input type="date" placeholder="Date created" ng-model="model.newDepartment.startDate" class="form-control rb-date-picker" ng-class="{ 'placeholder': true }" required />
+                </td>
+                <td>
+                    <select class="form-control"
+                            ng-model="model.newDepartment.administrator"
+                            ng-options="(administrator.firstName + ' ' + administrator.lastName) for administrator in model.instructors"
+                            required>
+
+                        <option disabled selected value> -- Select Administrator -- </option>
+
+                    </select>
+                </td>
+                <td class="text-center">
+                    <button class="btn btn-primary" type="submit">Add</button>
+                    <button class="btn btn-default" type="button" ng-click="model.hideAddDepartmentBox()">Cancel</button>
+                </td>
+            </tr>
+        </table>
+    </form>
+</div>
+</div>

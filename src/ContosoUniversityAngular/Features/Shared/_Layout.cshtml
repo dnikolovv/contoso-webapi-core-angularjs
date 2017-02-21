@@ -1,0 +1,61 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>@ViewData["Title"] - ContosoUniversityAngular</title>
+
+    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="~/lib/angular-toastr/dist/angular-toastr.min.css" />
+    <link rel="stylesheet" href="~/Css/site.css" />
+</head>
+<body>
+    <div class="navbar navbar-inverse navbar-fixed-top">
+        <div class="container">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand" href="/">ContosoUniversityAngular</a>
+            </div>
+            <div class="navbar-collapse collapse">
+                <ul class="nav navbar-nav">
+                    <li><a href="/">Home</a></li>
+                    <li><a href="/courses">Courses</a></li>
+                    <li><a href="/departments">Departments</a></li>
+                    <li><a href="/instructors">Instructors</a></li>
+                    <li><a href="/students">Students</a></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <div class="container body-content">
+
+        @RenderBody()
+
+        <hr />
+        <footer>
+            <p>&copy; 2017 - ContosoUniversityAngular</p>
+        </footer>
+    </div>
+
+    <script type="text/javascript" src="~/lib/angular/angular.min.js"></script>
+    <script type="text/javascript" src="~/lib/angular-ui-router/release/angular-ui-router.min.js"></script>
+    <script type="text/javascript" src="~/lib/angular-toastr/dist/angular-toastr.tpls.min.js"></script>
+
+    <script type="text/javascript" src="~/App/Directives/Directives.js"></script>
+    <script type="text/javascript" src="~/App/Directives/CatchValidationErrorsDirective.js"></script>
+    <script type="text/javascript" src="~/App/App.js"></script>
+    <script type="text/javascript" src="~/App/ErrorsService.js"></script>
+    <script type="text/javascript" src="~/App/NotificationsService.js"></script>
+
+    @RenderSection("scripts", required: false)
+
+    <script type="text/javascript">
+        @RenderSection("jsCode", required: false);
+    </script>
+</body>
+</html>

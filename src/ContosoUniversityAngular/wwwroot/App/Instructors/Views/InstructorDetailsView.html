@@ -1,0 +1,46 @@
+<div class="pull-left col-lg-6">
+    <div class="panel panel-default">
+        <div class="panel-heading">
+            <h3 class="panel-title">Instructor details</h3>
+        </div>
+        <div class="panel-body">
+            <div class="row">
+                <div class="col-md-9 col-lg-9">
+                    <table class="table table-user-information">
+                        <tbody>
+                        <tr>
+                            <td>Id:</td>
+                            <td>{{ model.instructor.id }}</td>
+                        </tr>
+                        <tr>
+                            <td>Name:</td>
+                            <td>{{ model.instructor.firstName }} {{ model.instructor.lastName }}</td>
+                        </tr>
+                        <tr>
+                        </tr>
+                        <tr>
+                            <td>Date hired:</td>
+                            <td>{{ model.instructor.hireDate | date: 'yyyy-MM-dd' }}</td>
+                        </tr>
+                        <tr>
+                            <td>Courses:</td>
+                            <td>
+                                <div ng-if="model.instructor.courses.length === 0">
+                                    No courses taught.
+                                </div>
+
+                                <div ng-repeat="course in model.instructor.courses">
+                                    {{ course.id }} {{ course.title }} </br>
+                                </div>
+                            </td>
+                        </tr>
+                        </tbody>
+                    </table>
+                    <button type="button" class="btn btn-warning" ng-click="model.showEditForm()">Edit</button>
+                </div>
+            </div>
+        </div>
+        <div class="panel-footer">
+        </div>
+    </div>
+</div>
